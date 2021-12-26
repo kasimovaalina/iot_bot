@@ -14,11 +14,12 @@ bot = telebot.TeleBot(token)
 
 
 @bot.message_handler(commands=['start'])
-def button_message(message):
+def photo_button_message_handler(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    item1 = types.KeyboardButton("Фото")
-    markup.add(item1)
-    bot.send_message(message.chat.id, 'Выберите что вам надо', reply_markup=markup)
+    photo_button = types.KeyboardButton("Фото")
+    markup.add(photo_button)
+    LOGGER.debug("User being offered with an action.")
+    bot.send_message(message.chat.id, 'Выберите необходимое', reply_markup=markup)
 
 
 @bot.message_handler(content_types='text')
