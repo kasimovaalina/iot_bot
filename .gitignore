@@ -4,3 +4,4 @@ venv/
 *.json
 *.png
 *.pyc
+setting.py

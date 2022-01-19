@@ -3,13 +3,14 @@ from telebot import types
 import logging
 import datetime
 from camera_manipulations import  make_photo
+from setting import get_token
 
 logging.basicConfig(format="%(asctime)s %(filename)s:%(lineno)s %(name)s::%(funcName)s: %(message)s",
                     datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.DEBUG)
 LOGGER = logging.getLogger("main")
 
-token = '5019806016:AAFod4Cy9FyFCxPlktH3IdgR0D1NYR2UdMY'
+token = get_token()
 bot = telebot.TeleBot(token)
 
 
